@@ -1,0 +1,8 @@
+node_modules
+dist
+public
+build
+.next
+cypress
+jest.config.js
+testSetup

@@ -1,0 +1,80 @@
+@use 'global' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+  display: flex;
+  width: 100%;
+  height: 45px;
+  background-color: $black;
+  align-items: center;
+  border-bottom: 2px solid #ffea00;
+  // padding: 0 30px;
+  padding: 0 120px;
+  position: fixed;
+  z-index: 1;
+
+  @media (max-width: $mobile) {
+    justify-content: unset;
+    padding: 0 30px;
+  }
+}
+
+.subheader {
+  color: $white;
+  background-color: $black;
+  padding: 45px 30px 15px;
+  text-align: center;
+
+  img {
+    margin: 15px 0;
+  }
+
+  h1 {
+    margin: 0 0 15px;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+}
+
+.logo {
+  margin-top: 5px;
+}
+
+.titles {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 15px;
+  justify-content: center;
+
+  span {
+    width: 100%;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    @include mobile {
+      font-size: 22px;
+      margin-right: 5px;
+      border-right: 1px solid #fff;
+      padding: 0 10px;
+      width: initial;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+
+  a {
+    margin-right: 10px;
+  }
+}

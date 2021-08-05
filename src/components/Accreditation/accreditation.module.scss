@@ -1,0 +1,57 @@
+@use 'global' as *;
+
+.container {
+  // width: 100%;
+}
+
+.panel {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  color: $white;
+
+  .collapse {
+    width: 100%;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    // text-decoration: underline;
+    font-size: 22px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+
+    a {
+      color: $white;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .logo {
+      margin-right: 15px;
+    }
+
+    .detail {
+      min-width: 612px;
+
+      .institution,
+      .name {
+        font-weight: 700;
+      }
+
+      .credential {
+        font-size: 12px;
+      }
+    }
+  }
+}

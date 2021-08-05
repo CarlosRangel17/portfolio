@@ -1,0 +1,23 @@
+@use '~styles/base/normalize.scss';
+// @use 'layout-styles.scss';
+@use 'global';
+
+/* tablet */
+@media only screen and (min-width: 767px) {
+  .container .grid-row {
+    margin: 0;
+  }
+}
+
+/* desktop */
+@media only screen and (min-width: 1025px) {
+  .container {
+    padding-right: 128px;
+    padding-left: 130px;
+  }
+
+  .container .grid-row {
+    margin-right: calc((15px * 0.5) * -1);
+    margin-left: calc((15px * 0.5) * -1);
+  }
+}
