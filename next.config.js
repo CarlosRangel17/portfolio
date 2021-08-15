@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: process.env.NODE_ENV === 'development' ? '' : '/track',
+  // basePath: process.env.NODE_ENV === 'development' ? '' : '/',
   future: {
     webpack5: true
   },
