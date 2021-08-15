@@ -5,12 +5,14 @@ import { accreditations } from '~consts/accreditation'
 import { Education as IEducation } from '~interfaces/accreditation'
 import UTA from '~svg/UTA'
 import TTU from '~svg/TTU'
+import { useWindowDimensions } from '~contexts/window-dimensions'
 
 interface Props {
   dimensions: any
 }
 
 const Education: FunctionComponent<Props> = ({ dimensions }) => {
+  const { isMobile } = useWindowDimensions()
   const educationLogos = {
     'Texas Tech University': <TTU className={styles.logo} {...dimensions} />,
     'The University of Texas at Arlington': <UTA className={styles.logo} {...dimensions} />
@@ -27,7 +29,7 @@ const Education: FunctionComponent<Props> = ({ dimensions }) => {
           <p>
             {degree}, {major}
           </p>
-          {gpa && <p>GPA: {gpa}</p>}
+          {!isMobile && gpa && <p>GPA: {gpa}</p>}
           {issueDate && <p>Issued: {issueDate}</p>}
           {term && <p>{term}</p>}
         </div>
