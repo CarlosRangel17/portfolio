@@ -17,7 +17,7 @@ const Logo: React.FunctionComponent<Props> = ({ fillColor = 'white', width = '15
     </defs>
     <g fill="none" fillRule="evenodd">
       <mask fill="#fff" id="logo-path2">
-        <use xlinkHref="#logo_path1" />
+        <use href="#logo_path1" />
       </mask>
       <g fill={fillColor} mask="url(#logo-path2)">
         <path d="M0 0H154.475V20.25H0z" />
