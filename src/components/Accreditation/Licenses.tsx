@@ -8,7 +8,11 @@ import Microsoft from '~svg/Microsoft'
 import IBM from '~svg/IBM'
 import EDX from '~svg/EDX'
 
-const Licenses: FunctionComponent = () => {
+interface Props {
+  dimensions: any
+}
+
+const Licenses: FunctionComponent<Props> = ({ dimensions }) => {
   const [seeAll, setSeeAll] = useState(false)
 
   const onSeeAll = () => {
@@ -17,9 +21,9 @@ const Licenses: FunctionComponent = () => {
   const { licenses: licensesData, otherLicenses: otherLicensesData } = accreditations
 
   const licenseLogos = {
-    Microsoft: <Microsoft className={styles.logo} />,
-    IBM: <IBM className={styles.logo} />,
-    edX: <EDX className={styles.logo} />
+    Microsoft: <Microsoft className={styles.logo} {...dimensions} />,
+    IBM: <IBM className={styles.logo} {...dimensions} />,
+    edX: <EDX className={styles.logo} {...dimensions} />
   }
 
   const getLicenseItems = (licenses: License[]) => {

@@ -15,6 +15,7 @@ export const links: SocialMediaLink[] = [
   }
 ]
 
-export const titles: string[] = ['Software Engineer', 'Mariachi Musician', 'Tech Wizard']
+export const titles: string[] = ['Software Engineer', 'UI/UX Design', 'Full-Stack Developer']
+// export const titles: string[] = ['Software Engineer', 'Mariachi Musician', 'Tech Wizard']
 // export const titles: string[] = ['Software Engineer', 'Mariachi Musician', 'UTA Graduate']
 // export const titles: string[] = ['App Developer', 'Software Consultant', 'Web Design']

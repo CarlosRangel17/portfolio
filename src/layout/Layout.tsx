@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 import Header from './Header'
 import Subheader from './Subheader'
+import { ThemeProvider } from '~contexts/theme/provider'
+import WindowDimensionsProvider from '~contexts/window-dimensions'
 
 const defaultTitle = 'Carlos Rangel Portfolio'
 const defaultDescription = 'Welcome to Carlos Rangels portfolio website where you can learn about his career.'
@@ -41,9 +43,13 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
       <meta content="1200" property="og:image:width" />
       <meta content="630" property="og:image:height" />
     </Head>
-    <Header homepage={homepage} />
-    <Subheader />
-    <main>{children}</main>
+    <ThemeProvider>
+      <WindowDimensionsProvider>
+        <Header homepage={homepage} />
+        <Subheader />
+        <main>{children}</main>
+      </WindowDimensionsProvider>
+    </ThemeProvider>
   </>
 )
 

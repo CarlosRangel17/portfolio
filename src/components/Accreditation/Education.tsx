@@ -6,10 +6,14 @@ import { Education as IEducation } from '~interfaces/accreditation'
 import UTA from '~svg/UTA'
 import TTU from '~svg/TTU'
 
-const Education: FunctionComponent = () => {
+interface Props {
+  dimensions: any
+}
+
+const Education: FunctionComponent<Props> = ({ dimensions }) => {
   const educationLogos = {
-    'Texas Tech University': <TTU className={styles.logo} />,
-    'The University of Texas at Arlington': <UTA className={styles.logo} />
+    'Texas Tech University': <TTU className={styles.logo} {...dimensions} />,
+    'The University of Texas at Arlington': <UTA className={styles.logo} {...dimensions} />
   }
   const { education: educationData } = accreditations
 

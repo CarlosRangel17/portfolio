@@ -1,15 +1,19 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext } from 'react'
 import styles from './header.module.scss'
 import { links, titles } from '~consts/header'
 import { SocialMediaLink } from '~interfaces/header'
 import getIcon from '~utils/getIcon'
 import ProfileImage from '~components/About/profileImage'
+import { ThemeContext } from '~contexts/theme'
+import clsx from 'clsx'
 
 type Props = {
   homepage?: string
 }
 
 const Subheader: FunctionComponent<Props> = () => {
+  const { colorMode } = useContext(ThemeContext)
+
   const socialMediaLinks = links.map((link: SocialMediaLink) => (
     <a
       key={link.name}
@@ -25,7 +29,7 @@ const Subheader: FunctionComponent<Props> = () => {
   const careerTitles = titles.map((title) => <span key={title}>{title}</span>)
 
   return (
-    <div className={styles.subheader}>
+    <div className={clsx(styles.subheader, colorMode === 'dark' && styles.secondary)}>
       <ProfileImage headerImage />
       <h1>Carlos Rangel</h1>
       <div className={styles.titles}>{careerTitles}</div>

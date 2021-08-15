@@ -8,17 +8,17 @@ import SectionLayout from '~layout/SectionLayout'
 const LandingPage: FunctionComponent = () => {
   return (
     <div className={styles.container}>
-      <SectionLayout mat title="About">
+      <SectionLayout secondary title="About">
         <About />
       </SectionLayout>
-      <SectionLayout title="Degrees / Certifications">
+      <SectionLayout title="Education / Licenses">
         <Accreditation />
       </SectionLayout>
-      <SectionLayout mat title="Projects">
+      <SectionLayout secondary title="Projects">
         test
       </SectionLayout>
       <SectionLayout title="Skills">test</SectionLayout>
-      <SectionLayout mat title="Contact">
+      <SectionLayout secondary title="Contact">
         test
       </SectionLayout>
     </div>

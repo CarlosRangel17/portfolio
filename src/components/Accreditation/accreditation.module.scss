@@ -8,7 +8,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  color: $white;
+  color: var(--color-primary);
 
   .collapse {
     width: 100%;
@@ -30,7 +30,7 @@
     margin-bottom: 15px;
 
     a {
-      color: $white;
+      color: var(--color-primary);
     }
 
     p {
@@ -39,10 +39,12 @@
 
     .logo {
       margin-right: 15px;
+      margin-left: 30px;
     }
 
     .detail {
-      min-width: 612px;
+      width: 100%;
+      margin-right: 30px;
 
       .institution,
       .name {
@@ -51,6 +53,11 @@
 
       .credential {
         font-size: 12px;
+      }
+
+      @include mobile {
+        min-width: 612px;
+        width: initial;
       }
     }
   }
