@@ -4,15 +4,9 @@ import styles from './accreditation.module.scss'
 import { accreditations } from '~consts/accreditation'
 import { License } from '~interfaces/accreditation'
 import Collapse from '~components/Collapse'
-import Microsoft from '~svg/Microsoft'
-import IBM from '~svg/IBM'
-import EDX from '~svg/EDX'
+import CustomImage from '~components/CustomImage'
 
-interface Props {
-  dimensions: any
-}
-
-const Licenses: FunctionComponent<Props> = ({ dimensions }) => {
+const Licenses: FunctionComponent = () => {
   const [seeAll, setSeeAll] = useState(false)
 
   const onSeeAll = () => {
@@ -21,9 +15,9 @@ const Licenses: FunctionComponent<Props> = ({ dimensions }) => {
   const { licenses: licensesData, otherLicenses: otherLicensesData } = accreditations
 
   const licenseLogos = {
-    Microsoft: <Microsoft className={styles.logo} {...dimensions} />,
-    IBM: <IBM className={styles.logo} {...dimensions} />,
-    edX: <EDX className={styles.logo} {...dimensions} />
+    Microsoft: <CustomImage className={styles.logo} imageKey="microsoft" />,
+    IBM: <CustomImage className={styles.logo} imageKey="ibm" />,
+    edX: <CustomImage className={styles.logo} imageKey="edx" />
   }
 
   const getLicenseItems = (licenses: License[]) => {

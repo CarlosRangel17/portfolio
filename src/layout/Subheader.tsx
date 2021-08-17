@@ -3,9 +3,9 @@ import styles from './header.module.scss'
 import { links, titles } from '~consts/header'
 import { SocialMediaLink } from '~interfaces/header'
 import getIcon from '~utils/getIcon'
-import ProfileImage from '~components/About/profileImage'
 import { ThemeContext } from '~contexts/theme'
 import clsx from 'clsx'
+import CustomImage from '~components/CustomImage'
 
 type Props = {
   homepage?: string
@@ -30,7 +30,7 @@ const Subheader: FunctionComponent<Props> = () => {
 
   return (
     <div className={clsx(styles.subheader, colorMode === 'dark' && styles.secondary)}>
-      <ProfileImage headerImage />
+      <CustomImage imageKey="portfolio" />
       <h1>Carlos Rangel</h1>
       <div className={styles.titles}>{careerTitles}</div>
       <div className={styles.links}>{socialMediaLinks}</div>

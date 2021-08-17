@@ -1,15 +1,15 @@
 import { FunctionComponent } from 'react'
 
 // import styles from './about.module.scss'
-import ProfileImage from './profileImage'
 import { description, intro, experience, speciality } from '~consts/about'
 
 import styles from './about.module.scss'
+import CustomImage from '~components/CustomImage'
 
 const About: FunctionComponent = () => {
   return (
     <div className={styles.container}>
-      <ProfileImage />
+      <CustomImage imageKey="about" />
       <div className={styles.bio}>
         <p className={styles.intro}>{intro}</p>
         <p className={styles.description}>{description}</p>

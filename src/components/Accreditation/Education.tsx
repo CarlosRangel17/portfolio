@@ -3,19 +3,14 @@ import { FunctionComponent } from 'react'
 import styles from './accreditation.module.scss'
 import { accreditations } from '~consts/accreditation'
 import { Education as IEducation } from '~interfaces/accreditation'
-import UTA from '~svg/UTA'
-import TTU from '~svg/TTU'
 import { useWindowDimensions } from '~contexts/window-dimensions'
+import CustomImage from '~components/CustomImage'
 
-interface Props {
-  dimensions: any
-}
-
-const Education: FunctionComponent<Props> = ({ dimensions }) => {
+const Education: FunctionComponent = () => {
   const { isMobile } = useWindowDimensions()
   const educationLogos = {
-    'Texas Tech University': <TTU className={styles.logo} {...dimensions} />,
-    'The University of Texas at Arlington': <UTA className={styles.logo} {...dimensions} />
+    'Texas Tech University': <CustomImage className={styles.logo} imageKey="ttu" />,
+    'The University of Texas at Arlington': <CustomImage className={styles.logo} imageKey="uta" />
   }
   const { education: educationData } = accreditations
 
