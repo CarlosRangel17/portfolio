@@ -51,6 +51,14 @@
     }
   }
 
+  &.dark {
+    h3 {
+      &::after {
+        background: #00b0ef;
+      }
+    }
+  }
+
   .content {
     display: flex;
     justify-content: center;

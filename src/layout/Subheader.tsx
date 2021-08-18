@@ -13,7 +13,6 @@ type Props = {
 
 const Subheader: FunctionComponent<Props> = () => {
   const { colorMode } = useContext(ThemeContext)
-
   const socialMediaLinks = links.map((link: SocialMediaLink) => (
     <a
       key={link.name}

@@ -1,7 +1,8 @@
-import { FunctionComponent, useState, useEffect } from 'react'
+import { FunctionComponent, useState, useEffect, useContext } from 'react'
 import { useWindowDimensions } from '~contexts/window-dimensions'
 
 import customImages from '~consts/images'
+import { ThemeContext } from '~contexts/theme'
 
 interface Props {
   imageKey: string
@@ -9,9 +10,12 @@ interface Props {
 }
 
 const CustomImage: FunctionComponent<Props> = ({ imageKey, ...rest }) => {
+  const { colorMode } = useContext(ThemeContext)
+
   const { innerWidth } = useWindowDimensions()
   const initState = customImages[imageKey]
   const [image, setImage] = useState({ ...initState })
+  const imgSrc = image.darkSrc?.length > 0 && colorMode === 'dark' ? image.darkSrc : image.src
 
   useEffect(() => {
     if (!image.enableMobileDimensions || innerWidth > 768) {
@@ -21,7 +25,7 @@ const CustomImage: FunctionComponent<Props> = ({ imageKey, ...rest }) => {
     }
   }, [innerWidth])
 
-  return <img alt={image.src} height={image.height} src={image.src} width={image.width} {...rest} />
+  return <img alt={imgSrc} height={image.height} src={imgSrc} width={image.width} {...rest} />
 }
 
 export default CustomImage

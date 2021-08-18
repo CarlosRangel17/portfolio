@@ -4,5 +4,6 @@ export interface PortolioImage {
     width: string
     height: string
     enableMobileDimensions?: boolean
+    darkSrc?: string
   }
 }

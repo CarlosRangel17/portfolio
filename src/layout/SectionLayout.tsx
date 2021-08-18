@@ -17,6 +17,7 @@ const SectionLayout: FunctionComponent<Props> = ({ title, secondary, children })
     <div
       className={clsx(
         styles.container,
+        colorMode === 'dark' && styles.dark,
         colorMode === 'light' && !secondary && styles.light,
         colorMode === 'dark' && secondary && styles['secondary']
       )}
