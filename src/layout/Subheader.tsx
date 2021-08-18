@@ -12,7 +12,7 @@ type Props = {
 }
 
 const Subheader: FunctionComponent<Props> = () => {
-  const { colorMode } = useContext(ThemeContext)
+  const { colorMode, setColorMode } = useContext(ThemeContext)
   const socialMediaLinks = links.map((link: SocialMediaLink) => (
     <a
       key={link.name}
@@ -27,9 +27,13 @@ const Subheader: FunctionComponent<Props> = () => {
 
   const careerTitles = titles.map((title) => <span key={title}>{title}</span>)
 
+  const handleToggle = () => {
+    setColorMode(colorMode === 'light' ? 'dark' : 'light')
+  }
+
   return (
     <div className={clsx(styles.subheader, colorMode === 'dark' && styles.secondary)}>
-      <CustomImage imageKey="portfolio" />
+      <CustomImage className={styles.icon} imageKey="portfolio" onClick={handleToggle} />
       <h1>Carlos Rangel</h1>
       <div className={styles.titles}>{careerTitles}</div>
       <div className={styles.links}>{socialMediaLinks}</div>
