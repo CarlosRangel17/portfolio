@@ -29,6 +29,17 @@
 
     .listSection {
       width: 154px;
+      display: flex;
+      flex-flow: row-reverse;
+
+      .menu {
+        display: flex;
+        background: transparent;
+        border: none;
+        // padding: 5px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
 
       .list {
         margin: 0;
