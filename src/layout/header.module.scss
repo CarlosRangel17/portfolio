@@ -117,7 +117,11 @@
   display: flex;
   justify-content: center;
 
-  a {
+  .headerLogoLink {
     margin-right: 10px;
+
+    &:hover {
+      color: #ffea00;
+    }
   }
 }

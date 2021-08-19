@@ -1,11 +1,12 @@
 import React, { FunctionComponent, useContext } from 'react'
-import styles from './header.module.scss'
 import { links, titles } from '~consts/header'
 import { SocialMediaLink } from '~interfaces/header'
 import getIcon from '~utils/getIcon'
 import { ThemeContext } from '~contexts/theme'
 import clsx from 'clsx'
 import CustomImage from '~components/CustomImage'
+
+import styles from './header.module.scss'
 
 type Props = {
   homepage?: string
