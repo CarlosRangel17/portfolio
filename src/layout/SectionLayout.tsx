@@ -15,6 +15,7 @@ const SectionLayout: FunctionComponent<Props> = ({ title, secondary, children })
 
   return (
     <div
+      id={title}
       className={clsx(
         styles.container,
         colorMode === 'dark' && styles.dark,

@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 317px;
+    min-height: 385px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+
+    .imageContainer {
+      cursor: pointer;
+      max-height: 185px;
+      border-radius: 15px;
+      position: relative;
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.33);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    }
+
+    .content {
+      background: #fff;
+      padding: 15px;
+      min-height: 225px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+
+      .project {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          text-transform: uppercase;
+
+          .links .link:first-of-type {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      h5 {
+        font-weight: 600;
+      }
+    }
+  }
+}

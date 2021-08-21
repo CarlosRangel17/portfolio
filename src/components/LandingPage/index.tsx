@@ -4,20 +4,17 @@ import styles from './landingPage.module.scss'
 import About from '~components/About'
 import Accreditation from '~components/Accreditation'
 import SectionLayout from '~layout/SectionLayout'
+import Projects from '~components/Projects'
 
 const LandingPage: FunctionComponent = () => {
   return (
     <div className={styles.container}>
-      <SectionLayout secondary title="About">
-        <About />
-      </SectionLayout>
-      <SectionLayout title="Education / Licenses">
-        <Accreditation />
-      </SectionLayout>
-      <SectionLayout secondary title="Projects">
+      <About />
+      <Projects />
+      <SectionLayout secondary title="Skills">
         test
       </SectionLayout>
-      <SectionLayout title="Skills">test</SectionLayout>
+      <Accreditation />
       <SectionLayout secondary title="Contact">
         test
       </SectionLayout>

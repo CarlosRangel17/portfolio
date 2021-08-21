@@ -2,6 +2,7 @@ import { SocialMediaLink } from '~interfaces/header'
 import Github from '~svg/Github'
 import Twitter from '~svg/Twitter'
 import LinkedIn from '~svg/LinkedIn'
+import Site from '~svg/Site'
 
 function getIcon(link: SocialMediaLink, height?: string, width?: string) {
   switch (link.name) {
@@ -12,7 +13,7 @@ function getIcon(link: SocialMediaLink, height?: string, width?: string) {
     case 'twitter':
       return <Twitter height={height} width={width} />
     default:
-      return <></>
+      return <Site height={height} width={width} />
   }
 }
 

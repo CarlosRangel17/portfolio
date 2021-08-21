@@ -1,4 +1,4 @@
-export interface PortolioImage {
+export interface CustomImage {
   [key: string]: {
     src: string
     width: string

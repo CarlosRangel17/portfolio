@@ -1,16 +1,17 @@
 import React, { FunctionComponent } from 'react'
-
-// import styles from './about.module.scss'
-
-import styles from './accreditation.module.scss'
 import Education from './Education'
 import Licenses from './Licenses'
+import SectionLayout from '~layout/SectionLayout'
+
+import styles from './accreditation.module.scss'
 
 const Accreditation: FunctionComponent = () => (
-  <div className={styles.container}>
-    <Education />
-    <Licenses />
-  </div>
+  <SectionLayout title="Education / Licenses">
+    <div className={styles.container}>
+      <Education />
+      <Licenses />
+    </div>
+  </SectionLayout>
 )
 
 export default Accreditation
