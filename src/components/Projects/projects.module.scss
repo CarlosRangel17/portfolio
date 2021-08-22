@@ -78,10 +78,14 @@
     }
   }
 
-  @include minMax(700px, 1060px) {
+  @include minMax(719px, 1060px) {
     .card:nth-child(2n) {
       margin-right: 0;
     }
+  }
+
+  @include minMax(700px, 718px) {
+    margin-right: 0;
   }
 
   @media screen and (min-width: 1060px) {
