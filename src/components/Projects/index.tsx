@@ -27,7 +27,7 @@ const Projects: FunctionComponent = () => {
       <div className={styles.card}>
         <div key={projectKey} className={styles.imageContainer}>
           <div className={styles.overlay}></div>
-          <CustomImage imageKey={projectKey} />
+          <CustomImage className={styles.image} imageKey={projectKey} />
         </div>
         <div className={styles.content}>
           <div className={styles.project}>
@@ -47,7 +47,9 @@ const Projects: FunctionComponent = () => {
   })
   return (
     <SectionLayout title="Projects">
-      <div className={styles.container}>{projectCards}</div>
+      <div className={styles.container}>
+        <div className={styles.body}>{projectCards}</div>
+      </div>
     </SectionLayout>
   )
 }

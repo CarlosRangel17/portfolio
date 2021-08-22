@@ -1,4 +1,21 @@
+@use 'global' as *;
+
 .container {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0px 30px;
+
+  @include minMax(700px, 1000px) {
+    max-width: 700px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    max-width: 1001px;
+  }
+}
+
+.body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -8,8 +25,9 @@
     flex-direction: column;
     max-width: 317px;
     min-height: 385px;
-    margin-right: 25px;
     margin-bottom: 25px;
+    border: 1px solid #b3b5b7;
+    border-radius: 5px 5px;
 
     .imageContainer {
       cursor: pointer;
@@ -22,6 +40,11 @@
         height: 100%;
         width: 100%;
         position: absolute;
+        border-radius: 5px 5px;
+      }
+
+      .image {
+        border-radius: 5px 5px;
       }
     }
 
@@ -48,6 +71,24 @@
       h5 {
         font-weight: 600;
       }
+    }
+
+    @media (min-width: 700px) {
+      margin-right: 25px;
+    }
+  }
+
+  @include minMax(700px, 1060px) {
+    .card:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: 1060px) {
+    justify-content: start;
+
+    .card:nth-child(3n) {
+      margin-right: 0;
     }
   }
 }
