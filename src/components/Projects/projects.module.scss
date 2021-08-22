@@ -40,11 +40,11 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        border-radius: 5px 5px;
+        border-radius: 5px 5px 0 0;
       }
 
       .image {
-        border-radius: 5px 5px;
+        border-radius: 5px 5px 0 0;
       }
     }
 
@@ -55,6 +55,12 @@
       display: flex;
       flex-flow: column;
       justify-content: space-around;
+      border-radius: 0 0 5px 5px;
+
+      &.dark {
+        background: #161616;
+        color: var(--color-primary);
+      }
 
       .project {
         .header {
