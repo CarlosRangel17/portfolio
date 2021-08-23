@@ -48,8 +48,8 @@ const cometx: Project = {
   description:
     'CometX is a .NET library that allows you to use custom domain classes to perform any number of data accessing requirements.',
   technologies: ['C#', '.NET Framework'],
-  githubUrl: 'https://github.com/CarlosRangel17/organic-shop',
-  siteUrl: 'https://organic-shop-1d9aa.web.app/'
+  githubUrl: 'https://github.com/CarlosRangel17/organic-shop'
+  // siteUrl: 'https://organic-shop-1d9aa.web.app/'
 }
 
 // const projects: Project[] = [portfolio, ticTacToe, weatherapp, marvelSearchEngine, organicShop, cometx]

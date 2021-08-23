@@ -11,7 +11,7 @@ const Projects: FunctionComponent = () => {
   ))
 
   return (
-    <SectionLayout secondary title="Projects">
+    <SectionLayout title="Projects">
       <div className={styles.container}>
         <div className={styles.body}>{projectCards}</div>
       </div>

@@ -9,7 +9,7 @@ import SectionLayout from '~layout/SectionLayout'
 
 const About: FunctionComponent = () => {
   return (
-    <SectionLayout title="About">
+    <SectionLayout secondary title="About">
       <div className={styles.container}>
         <CustomImage imageKey="about" />
         <div className={styles.bio}>

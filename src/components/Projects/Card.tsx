@@ -23,12 +23,16 @@ const Card: FunctionComponent<Props> = ({ projectKey, project }) => {
   }
   const links = (
     <>
-      <a key={projectKey} aria-label={title} className={styles.link} href={githubUrl} target="_blank">
-        <Github {...linkProps} />
-      </a>
-      <a key={projectKey} aria-label={title} className={styles.link} href={siteUrl} target="_blank">
-        <Site {...linkProps} />
-      </a>
+      {githubUrl && (
+        <a key={projectKey} aria-label={title} className={styles.link} href={githubUrl} target="_blank">
+          <Github {...linkProps} />
+        </a>
+      )}
+      {siteUrl && (
+        <a key={projectKey} aria-label={title} className={styles.link} href={siteUrl} target="_blank">
+          <Site {...linkProps} />
+        </a>
+      )}
     </>
   )
 

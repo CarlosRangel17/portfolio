@@ -9,8 +9,8 @@ import Projects from '~components/Projects'
 const LandingPage: FunctionComponent = () => {
   return (
     <div className={styles.container}>
-      <Projects />
       <About />
+      <Projects />
       <SectionLayout secondary title="Skills">
         test
       </SectionLayout>
