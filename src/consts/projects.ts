@@ -32,7 +32,7 @@ const marvelSearchEngine: Project = {
   description: 'A search engine for all things Marvel. (i.e Comics, Characters, Events, Series, etc.)',
   technologies: ['Angular 7', 'Javascript', 'HTML5', 'CSS3'],
   githubUrl: 'https://github.com/CarlosRangel17/angular-marvel-engine',
-  siteUrl: 'https://angular-marvel-engine.web.app/'
+  siteUrl: 'https://angular-marvel-engine.firebaseapp.com/'
 }
 
 const organicShop: Project = {
@@ -48,7 +48,7 @@ const cometx: Project = {
   description:
     'CometX is a .NET library that allows you to use custom domain classes to perform any number of data accessing requirements.',
   technologies: ['C#', '.NET Framework'],
-  githubUrl: 'https://github.com/CarlosRangel17/organic-shop'
+  githubUrl: 'https://github.com/CarlosRangel17/CometX'
   // siteUrl: 'https://organic-shop-1d9aa.web.app/'
 }
 
