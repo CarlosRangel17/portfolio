@@ -24,12 +24,12 @@ const Card: FunctionComponent<Props> = ({ projectKey, project }) => {
   const links = (
     <>
       {githubUrl && (
-        <a key={projectKey} aria-label={title} className={styles.link} href={githubUrl} target="_blank">
+        <a aria-label={title} className={styles.link} href={githubUrl} target="_blank">
           <Github {...linkProps} />
         </a>
       )}
       {siteUrl && (
-        <a key={projectKey} aria-label={title} className={styles.link} href={siteUrl} target="_blank">
+        <a aria-label={title} className={styles.link} href={siteUrl} target="_blank">
           <Site {...linkProps} />
         </a>
       )}
@@ -47,7 +47,9 @@ const Card: FunctionComponent<Props> = ({ projectKey, project }) => {
         <div className={styles.project}>
           <div className={styles.header}>
             <h5>{title}</h5>
-            <div className={styles.links}>{links}</div>
+            <div key={projectKey} className={styles.links}>
+              {links}
+            </div>
           </div>
           <p>{description}</p>
         </div>

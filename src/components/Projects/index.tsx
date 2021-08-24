@@ -7,7 +7,7 @@ import Card from './Card'
 
 const Projects: FunctionComponent = () => {
   const projectCards = Object.keys(projects).map((projectKey: string) => (
-    <Card projectKey={projectKey} project={projects[projectKey]} />
+    <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
   ))
 
   return (
