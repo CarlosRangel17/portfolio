@@ -39,7 +39,7 @@
   }
 
   &.light {
-    .section:nth-child(2n-1) {
+    .section:nth-child(2n) {
       background-color: #f0f0f0;
     }
   }
