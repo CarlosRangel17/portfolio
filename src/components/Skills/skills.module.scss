@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.container {
+  svg {
+    padding: 20px;
+    background: $black;
+  }
+}

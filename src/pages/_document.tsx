@@ -55,6 +55,7 @@ export default class MyDocument extends Document {
           {/* Fonts - preload the css first */}
           <link as="style" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="preload" />
           <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css" />
           <script
             dangerouslySetInnerHTML={{
               __html: codeToRunOnClient

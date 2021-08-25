@@ -5,13 +5,17 @@ import projects from '~consts/projects'
 import styles from './/projects.module.scss'
 import Card from './Card'
 
-const Projects: FunctionComponent = () => {
+interface Props {
+  [rest: string]: unknown
+}
+
+const Projects: FunctionComponent<Props> = ({ ...rest }) => {
   const projectCards = Object.keys(projects).map((projectKey: string) => (
     <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
   ))
 
   return (
-    <SectionLayout title="Projects">
+    <SectionLayout title="Projects" {...rest}>
       <div className={styles.container}>
         <div className={styles.body}>{projectCards}</div>
       </div>

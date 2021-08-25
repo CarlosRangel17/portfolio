@@ -1,32 +1,18 @@
-import React, { FunctionComponent, useContext } from 'react'
+import React, { FunctionComponent } from 'react'
 import styles from './sectionLayout.module.scss'
 import clsx from 'clsx'
-import { ThemeContext } from '~contexts/theme'
 
 type Props = {
   title?: string
+  [rest: string]: unknown
   secondary?: boolean
 }
 
-const SectionLayout: FunctionComponent<Props> = ({ title, secondary, children }) => {
-  const { colorMode } = useContext(ThemeContext)
-
-  const sectionTitle = <h3>{title}</h3>
-
-  return (
-    <div
-      id={title}
-      className={clsx(
-        styles.container,
-        colorMode === 'dark' && styles.dark,
-        colorMode === 'light' && !secondary && styles.light,
-        colorMode === 'dark' && secondary && styles['secondary']
-      )}
-    >
-      {title && sectionTitle}
-      <div className={styles.content}>{children}</div>
-    </div>
-  )
-}
+const SectionLayout: FunctionComponent<Props> = ({ title, secondary, children, ...rest }) => (
+  <div {...rest} id={title} className={clsx(styles.container, rest.className)}>
+    {title && <h3>{title}</h3>}
+    <div className={styles.content}>{children}</div>
+  </div>
+)
 
 export default SectionLayout

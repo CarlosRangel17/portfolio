@@ -7,9 +7,13 @@ import styles from './about.module.scss'
 import CustomImage from '~components/CustomImage'
 import SectionLayout from '~layout/SectionLayout'
 
-const About: FunctionComponent = () => {
+interface Props {
+  [rest: string]: unknown
+}
+
+const About: FunctionComponent<Props> = ({ ...rest }) => {
   return (
-    <SectionLayout secondary title="About">
+    <SectionLayout title="About" {...rest}>
       <div className={styles.container}>
         <CustomImage imageKey="about" />
         <div className={styles.bio}>
