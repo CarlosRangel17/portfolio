@@ -44,7 +44,7 @@ const Skills: FunctionComponent<Props> = ({ ...rest }) => {
     <SQLServer />,
     <Git />
   ]
-  const formatSkills = skillLogos.map((logo: JSX.Element =>
+  const formatSkills = skillLogos.map((logo: JSX.Element) =>
     React.cloneElement(logo, {
       key: skillLogos.indexOf(logo),
       height: '150px',
