@@ -1,7 +1,11 @@
 @use 'global' as *;
 
 .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   max-width: 600px;
+
   svg {
     padding: 20px;
   }
