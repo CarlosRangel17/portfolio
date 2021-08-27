@@ -49,7 +49,7 @@ const Skills: FunctionComponent<Props> = ({ ...rest }) => {
       key: skillLogos.indexOf(logo),
       height: '150px',
       style: {
-        background: `rgba(200, 200, 200, ${0.035 * ((n - ()) + 1)})`
+        background: `rgba(200, 200, 200, ${0.035 * (n + 1)})`
       },
       width: '150px'
     })
