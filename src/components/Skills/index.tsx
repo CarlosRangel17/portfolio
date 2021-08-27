@@ -27,21 +27,21 @@ interface Props {
 const Skills: FunctionComponent<Props> = ({ ...rest }) => {
   // rgba(0, 0, 0, 0.035)
   const skillLogos = [
-    <ReactJS />,
-    <Angular />,
-    <CSharp />,
-    <NodeJS />,
-    <TypeScript />,
+    <JavaScript />,
     <HTML />,
     <CSS />,
     <Sass />,
-    <JavaScript />,
+    <TypeScript />,
+    <ReactJS />,
+    <Angular />,
+    <CSharp />,
     <JQuery />,
+    <NodeJS />,
     <Jest />,
-    <SQLServer />,
-    <Figma />,
     <NETCore />,
+    <Figma />,
     <NextJS />,
+    <SQLServer />,
     <Git />
   ]
   const formatSkills = skillLogos.map((logo: JSX.Element, n: number) =>
@@ -49,7 +49,7 @@ const Skills: FunctionComponent<Props> = ({ ...rest }) => {
       key: skillLogos.indexOf(logo),
       height: '150px',
       style: {
-        background: `rgba(200, 200, 200, ${0.035 * (n + 1)})`
+        // background: `rgba(200, 200, 200, ${0.035 * (n + 1)})`
       },
       width: '150px'
     })
