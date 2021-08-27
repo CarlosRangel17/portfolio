@@ -1,8 +1,8 @@
 @use 'global' as *;
 
 .container {
+  max-width: 600px;
   svg {
     padding: 20px;
-    background: $black;
   }
 }
