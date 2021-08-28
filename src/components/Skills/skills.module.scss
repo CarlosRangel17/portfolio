@@ -4,9 +4,13 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  max-width: 600px;
+  max-width: 300px;
 
   svg {
     padding: 20px;
+  }
+
+  @media screen and (min-width: 450px) {
+    max-width: 600px;
   }
 }
