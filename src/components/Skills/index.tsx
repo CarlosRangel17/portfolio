@@ -18,14 +18,14 @@ const Skills: FunctionComponent<Props> = ({ ...rest }) => {
     const skillLogo = colorMode === 'dark' && alternate ? alternate : logo
     const skill =
       colorMode === 'dark' && altBg?.length > 0 ? (
-        <div style={{ background: `${altBg}`, display: 'flex', alignItems: 'center' }}>{skillLogo}</div>
+        <div style={{ background: `${altBg}`, display: 'flex', alignItems: 'center', borderRadius: '150px' }}>
+          {skillLogo}
+        </div>
       ) : (
         skillLogo
       )
     return React.cloneElement(skill, {
-      key: key,
-      height: '150px',
-      width: '150px'
+      key: key
     })
   })
 
