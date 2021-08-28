@@ -16,16 +16,28 @@ const Skills: FunctionComponent<Props> = ({ ...rest }) => {
   const formatSkills = Object.keys(SkillsConfig).map((key: string) => {
     const { logo, alternate, altBg } = SkillsConfig[key]
     const skillLogo = colorMode === 'dark' && alternate ? alternate : logo
-    const skill =
-      colorMode === 'dark' && altBg?.length > 0 ? (
-        <div style={{ background: `${altBg}`, display: 'flex', alignItems: 'center', borderRadius: '150px' }}>
+
+    if (colorMode === 'dark' && altBg?.length > 0) {
+      return (
+        <div
+          key={key}
+          style={{
+            background: `${altBg}`,
+            display: 'flex',
+            alignItems: 'center',
+            borderRadius: '150px',
+            maxHeight: '125px',
+            marginTop: '20px'
+          }}
+        >
           {skillLogo}
         </div>
-      ) : (
-        skillLogo
       )
-    return React.cloneElement(skill, {
-      key: key
+    }
+    return React.cloneElement(skillLogo, {
+      key: key,
+      height: '150px',
+      width: '150px'
     })
   })
 
