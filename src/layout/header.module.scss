@@ -61,6 +61,43 @@
   padding: 45px 30px 15px;
   text-align: center;
 
+  .bg-balls:before {
+    background-color: #ffc72a;
+    right: -75px;
+    bottom: -75px;
+  }
+
+  .bg-balls:after {
+    width: 220px;
+    height: 220px;
+    top: -110px;
+    left: -110px;
+  }
+
+  .bg-balls:after {
+    background-color: #12e177;
+    top: -75px;
+    left: -75px;
+  }
+
+  .bg-balls {
+    &::before {
+      width: 220px;
+      height: 220px;
+      right: -110px;
+      bottom: -110px;
+    }
+  }
+
+  .bg-balls:after,
+  .bg-balls:before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
   img {
     margin: 15px 0;
   }

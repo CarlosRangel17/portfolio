@@ -20,6 +20,7 @@ const Subheader: FunctionComponent<Props> = () => {
       aria-label="carlos-rangel-portfolio"
       className={styles.headerLogoLink}
       href={link.url}
+      rel="noopener noreferrer"
       target="_blank"
     >
       {getIcon(link, '30px', '30px')}
@@ -38,6 +39,7 @@ const Subheader: FunctionComponent<Props> = () => {
       <h1>Carlos Rangel</h1>
       <div className={styles.titles}>{careerTitles}</div>
       <div className={styles.links}>{socialMediaLinks}</div>
+      {/* <div className={styles['bg-balls']}></div> */}
     </div>
   )
 }

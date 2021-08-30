@@ -15,7 +15,7 @@ const Projects: FunctionComponent<Props> = ({ ...rest }) => {
   ))
 
   return (
-    <SectionLayout title="Projects" {...rest}>
+    <SectionLayout title="Recent Projects" {...rest}>
       <div className={styles.container}>
         <div className={styles.body}>{projectCards}</div>
       </div>
