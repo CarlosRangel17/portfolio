@@ -1,6 +1,6 @@
 import { FunctionComponent, useContext } from 'react'
 
-// import SectionLayout from '~layout/SectionLayout'
+import SectionLayout from '~layout/SectionLayout'
 import clsx from 'clsx'
 import { ThemeContext } from '~contexts/theme'
 import Projects from '~components/Projects'
@@ -16,9 +16,9 @@ const LandingPage: FunctionComponent = () => {
       <About className={styles.section} />
       <Projects className={styles.section} />
       <Skills className={styles.section} />
-      {/* <SectionLayout className={styles.section} title="Contact">
+      <SectionLayout className={styles.section} title="Contact">
         test
-      </SectionLayout> */}
+      </SectionLayout>
     </div>
   )
 }
