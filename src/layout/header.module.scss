@@ -34,15 +34,6 @@
       flex-flow: row;
       align-items: center;
 
-      .dropdownMenu {
-        background: var(--color-background);
-        min-height: 100px;
-        min-width: 250px;
-        position: absolute;
-        top: 45px;
-        right: 20px;
-      }
-
       .menu {
         display: flex;
         background: transparent;

@@ -1,12 +1,12 @@
 import { SocialMediaLink, MenuItem } from '~interfaces/header'
 
 export const menuItems: MenuItem[] = [
-  { title: 'Home' },
+  // { title: 'Home' },
   { title: 'Projects', id: 'Recent Projects' },
   { title: 'About', id: 'About Me' },
   { title: 'Skills' },
-  { title: 'Contact' }
-  // { title: 'Resume' }
+  { title: 'Contact' },
+  { title: 'Resume' }
 ]
 
 export const links: SocialMediaLink[] = [
