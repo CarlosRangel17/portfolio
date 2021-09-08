@@ -70,12 +70,6 @@ const Fade: React.FunctionComponent<Props> = ({
       appear={appear}
       enter={enter}
       exit={exit}
-      onEnter={onEnter}
-      onEntering={onEntering}
-      onEntered={onEntered}
-      onExit={onExit}
-      onExiting={onExiting}
-      onExited={onExited}
     >
       {(status) => (
         // @ts-ignore

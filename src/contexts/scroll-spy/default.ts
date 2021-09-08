@@ -20,7 +20,7 @@ export const useActiveScrollSpy = () => {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
-    const onScroll = (e) => {
+    const onScroll = () => {
       const { scrollY: windowScrollY } = window
       if (windowScrollY === 0) {
         setActiveSection(0)
