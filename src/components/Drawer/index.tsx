@@ -95,33 +95,36 @@ const Drawer: FunctionComponent<Props> = ({
     <Portal ref={portalRef}>
       <>
         <Transition in={isShowing} timeout={duration} id={id} {...rest}>
-          <div
-            className={drawerClassName}
-            role="dialog"
-            aria-label={`${id} drawer`}
-            aria-modal="true"
-            ref={modalRef}
-            onKeyDown={handleKeys}
-          >
-            <div className={clsx(styles.header, colorMode === 'dark' && styles.secondary, headerClassName)}>
-              {(close || onClose) && (
-                <div
-                  role="button"
-                  tabIndex={0}
-                  onClick={hideDrawer}
-                  className={styles.close}
-                  aria-label="Close Drawer"
-                  ref={closeBtnRef}
-                  id={`close-drawer-${id}`}
-                >
-                  <span className={clsx(styles['close-icon-wrapper'], closeButtonClass)} aria-hidden="true">
-                    <Close width="10" height="10" stroke={closeButtonColor} strokeWidth="2" fillColor="white" />
-                  </span>
-                </div>
-              )}
+          {(state) => (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+            <div
+              className={drawerClassName}
+              role="dialog"
+              aria-label={`${id} drawer`}
+              aria-modal="true"
+              ref={modalRef}
+              onKeyDown={handleKeys}
+            >
+              <div className={clsx(styles.header, colorMode === 'dark' && styles.secondary, headerClassName)}>
+                {(close || onClose) && (
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onClick={hideDrawer}
+                    className={styles.close}
+                    aria-label="Close Drawer"
+                    ref={closeBtnRef}
+                    id={`close-drawer-${id}`}
+                  >
+                    <span className={clsx(styles['close-icon-wrapper'], closeButtonClass)} aria-hidden="true">
+                      <Close width="10" height="10" stroke={closeButtonColor} strokeWidth="2" fillColor="white" />
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div className={clsx(styles.body, bodyClassName)}>{children}</div>
             </div>
-            <div className={clsx(styles.body, bodyClassName)}>{children}</div>
-          </div>
+          )}
         </Transition>
         {backdrop && (
           <Fade
