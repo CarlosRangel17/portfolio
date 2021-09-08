@@ -7,12 +7,14 @@ import clsx from 'clsx'
 import CustomImage from '~components/CustomImage'
 
 import styles from './header.module.scss'
+import { useActiveScrollSpy } from '~contexts/scroll-spy/default'
 
 type Props = {
   homepage?: string
 }
 
 const Subheader: FunctionComponent<Props> = () => {
+  const { sectionRefs } = useActiveScrollSpy()
   const { colorMode, setColorMode } = useContext(ThemeContext)
   const socialMediaLinks = links.map((link: SocialMediaLink) => (
     <a
@@ -34,13 +36,16 @@ const Subheader: FunctionComponent<Props> = () => {
   }
 
   return (
-    <div className={clsx(styles.subheader, colorMode === 'dark' && styles.secondary)}>
+    <section
+      id="Home"
+      className={clsx(styles.subheader, colorMode === 'dark' && styles.secondary)}
+      ref={sectionRefs[0]}
+    >
       <CustomImage className={styles.icon} imageKey="portfolio" onClick={handleToggle} />
       <h1>Carlos Rangel</h1>
       <div className={styles.titles}>{careerTitles}</div>
       <div className={styles.links}>{socialMediaLinks}</div>
-      {/* <div className={styles['bg-balls']}></div> */}
-    </div>
+    </section>
   )
 }
 

@@ -1,0 +1,77 @@
+@use 'global' as *;
+
+$z-drawer-background: 1040;
+$z-drawer-wrapper: 1050;
+$drawer-width: 315px;
+
+.container {
+  box-shadow: -2px 0 12px 0 rgba(47, 51, 55, 0.06);
+  color: $gray-10;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition-timing-function: ease;
+  width: 100%;
+  z-index: $z-drawer-wrapper;
+
+  &.right {
+    left: auto;
+    right: 0;
+    width: $drawer-width;
+    will-change: right;
+  }
+}
+
+.drawer {
+  width: 315px;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  height: 47px;
+  background-color: #161616;
+  border-bottom: 2px solid #ffea00;
+
+  &.secondary {
+    background-color: $black;
+    border-bottom: 2px solid #00b0ef;
+  }
+}
+
+.body {
+  background-color: $white;
+  height: 100%;
+  overflow: auto;
+  padding: 0px 20px;
+}
+
+.close {
+  @include closeX();
+  padding: 0px;
+
+  &-icon-wrapper {
+    display: flex;
+    padding: 10px;
+  }
+}
+
+.wrapper-backdrop {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $z-drawer-background;
+
+  &.backdrop {
+    background-color: $black;
+    opacity: 0.5;
+  }
+}

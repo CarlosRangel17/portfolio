@@ -1,5 +1,24 @@
 @use '~styles/utils/variables' as *;
 
+@mixin closeX() {
+  background-color: $transparent;
+  color: $gray-11;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 30px;
+  font-weight: 200;
+  padding: 0 5px;
+
+  &:focus {
+    border-radius: 50px;
+    outline: #888 dotted 1px;
+    padding: 2px;
+    margin-top: -2px;
+    margin-right: -2px;
+  }
+}
+
 // Screen Breakpoints -> Mobile First
 @mixin small-mobile {
   @media screen and (min-width: $small-mobile) {

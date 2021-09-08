@@ -11,20 +11,18 @@ interface Props {
   [rest: string]: unknown
 }
 
-const About: FunctionComponent<Props> = ({ ...rest }) => {
-  return (
-    <SectionLayout title="About" {...rest}>
-      <div className={styles.container}>
-        <CustomImage imageKey="about" />
-        <div className={styles.bio}>
-          <p className={styles.intro}>{intro}</p>
-          <p className={styles.description}>{description}</p>
-          <p className={styles.experience}>{experience}</p>
-          <p className={styles.speciality}>{speciality}</p>
-        </div>
+const About: FunctionComponent<Props> = ({ ...rest }) => (
+  <SectionLayout title="About Me" {...rest}>
+    <div className={styles.container}>
+      <CustomImage imageKey="about" />
+      <div className={styles.bio}>
+        <p className={styles.intro}>{intro}</p>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.experience}>{experience}</p>
+        <p className={styles.speciality}>{speciality}</p>
       </div>
-    </SectionLayout>
-  )
-}
+    </div>
+  </SectionLayout>
+)
 
 export default About
