@@ -24,8 +24,8 @@ const useOpenModal = ({ isOpen, setIsShowing, closeBtnRef }: Props) => {
 
       // safari doesn't respect overflows on body/html. You need to set the position to fixed
       if (isSafari) {
-        document.body.style.top = `${-window.pageYOffset}px`
-        document.body.style.position = 'fixed'
+        // document.body.style.top = `${-window.pageYOffset}px`
+        // document.body.style.position = 'fixed'
       }
 
       if (closeBtnRef.current !== null) {
@@ -37,12 +37,12 @@ const useOpenModal = ({ isOpen, setIsShowing, closeBtnRef }: Props) => {
       document.documentElement.style.overflow = ''
       // with a fixed position, the scroll goes to the top.
       // After setting the top, we grab that value and scroll to it to restore scroll position
-      if (isSafari) {
-        const offsetY = Math.abs(parseInt(document.body.style.top || '0', 10))
-        document.body.style.position = ''
-        document.body.style.top = ''
-        window.scrollTo(0, offsetY || 0)
-      }
+      // if (isSafari) {
+      //   const offsetY = Math.abs(parseInt(document.body.style.top || '0', 10))
+      //   document.body.style.position = ''
+      //   document.body.style.top = ''
+      //   window.scrollTo(0, offsetY || 0)
+      // }
     }
     return () => {
       document.body.style.overflow = ''

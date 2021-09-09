@@ -9,6 +9,7 @@ import useOpenModal from '~utils/useOpenModal'
 import Fade from '~components/Fade'
 import Close from '~svg/Close'
 import { ThemeContext } from '~contexts/theme'
+import DarkToggle from '~components/DarkToggle'
 
 interface Props {
   backdrop?: boolean
@@ -104,6 +105,7 @@ const Drawer: FunctionComponent<Props> = ({
             onKeyDown={handleKeys}
           >
             <div className={clsx(styles.header, colorMode === 'dark' && styles.secondary, headerClassName)}>
+              <DarkToggle />
               {(close || onClose) && (
                 <div
                   role="button"
