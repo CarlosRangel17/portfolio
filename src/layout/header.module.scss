@@ -85,7 +85,7 @@
 
 .drawerBody {
   padding: 0px !important;
-  background-color: #161616 !important;
+  background-color: var(--color-background) !important;
 
   .list {
     display: flex;
@@ -114,7 +114,7 @@
     }
 
     li a {
-      color: white;
+      color: var(--color-primary);
       text-transform: uppercase;
       text-decoration: none;
       font-size: 16px;
