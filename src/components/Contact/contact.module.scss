@@ -1,0 +1,99 @@
+@use 'global' as *;
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+
+  p {
+    width: 100%;
+    color: var(--color-text);
+  }
+
+  .form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0 15px 50px;
+    margin: auto;
+
+    @include mobile {
+      padding: 0 30px;
+    }
+
+    @include desktop {
+      max-width: 787px;
+    }
+
+    .inputWrapper,
+    .textareaWrapper {
+      width: 100%;
+      max-width: 712px;
+
+      .formGroup {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+        font-size: 16px;
+
+        .label {
+          padding: 5px;
+          position: absolute;
+          top: 18px;
+          left: 17px;
+          color: var(--color-text);
+          cursor: text;
+          transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+        }
+
+        .input {
+          background: transparent;
+          // position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          border: 2px solid #d7d7d7;
+          border-radius: 50px;
+          padding: 20px;
+          outline: none;
+          color: var(--color-text);
+
+          &:hover {
+            border-color: rgba(255, 182, 0, 0.5);
+            &.dark {
+              border-color: rgba(0, 176, 239, 0.5);
+            }
+          }
+
+          &:focus {
+            border-color: rgba(255, 182, 0, 1);
+            &.dark {
+              border-color: rgba(0, 176, 239, 1);
+            }
+          }
+        }
+
+        .textarea {
+          border-radius: 15px;
+        }
+
+        .input:focus ~ .label,
+        .input:not(:placeholder-shown).input:not(:focus) ~ .label {
+          top: -10px;
+          left: 18px;
+          font-size: 0.8rem;
+          background: var(--color-background);
+        }
+
+        .input.dark:focus ~ .label,
+        .input.dark:not(:placeholder-shown).input.dark:not(:focus) ~ .label {
+          background: #202020;
+        }
+      }
+    }
+  }
+}
