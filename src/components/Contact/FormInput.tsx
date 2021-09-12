@@ -20,7 +20,7 @@ const FormInput: FunctionComponent<Props> = ({ fieldName, ...rest }) => {
     className: clsx(styles.input, colorMode === 'dark' && styles.dark, rest?.className),
     id: formId,
     label: fieldName,
-    name: fieldName,
+    name: fieldName === 'Email Address' ? 'email' : fieldName,
     placeholder: ' ',
     type: 'text',
     ...rest
