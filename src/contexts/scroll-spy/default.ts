@@ -24,6 +24,8 @@ export const useActiveScrollSpy = () => {
       const { scrollY: windowScrollY } = window
       if (windowScrollY === 0) {
         setActiveSection(0)
+      } else if (windowScrollY > 3246) {
+        setActiveSection(4)
       } else {
         setActiveSection(initActiveSection)
       }

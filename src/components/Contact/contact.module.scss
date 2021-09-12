@@ -28,12 +28,31 @@
       max-width: 787px;
     }
 
-    .inputWrapper,
-    .textareaWrapper {
+    .formGroup {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
       max-width: 712px;
 
-      .formGroup {
+      &.col .inputWrapper {
+        width: 48%;
+      }
+
+      &.btnGroup {
+        justify-content: end;
+
+        button:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .inputWrapper,
+    .textareaWrapper {
+      width: 100%;
+      // max-width: 712px;
+
+      .innerWrapper {
         position: relative;
         width: 100%;
         margin-bottom: 30px;
@@ -78,7 +97,7 @@
         }
 
         .textarea {
-          border-radius: 15px;
+          border-radius: 5px;
         }
 
         .input:focus ~ .label,

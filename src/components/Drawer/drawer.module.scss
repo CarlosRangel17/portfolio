@@ -37,7 +37,7 @@ $drawer-width: 315px;
   justify-content: flex-end;
   height: 47px;
   background-color: #161616;
-  border-bottom: 2px solid #ffea00;
+  border-bottom: 2px solid $yellow;
 
   &.secondary {
     background-color: $black;

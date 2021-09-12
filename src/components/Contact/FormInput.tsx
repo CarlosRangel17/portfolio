@@ -8,20 +8,22 @@ import Textarea from './Textarea'
 
 interface Props {
   fieldName?: string
+  [rest: string]: unknown
 }
 
-const FormInput: FunctionComponent<Props> = ({ fieldName }) => {
+const FormInput: FunctionComponent<Props> = ({ fieldName, ...rest }) => {
   const { colorMode } = useContext(ThemeContext)
 
   const formId = fieldName?.toLowerCase().replace(' ', '')
   const inputProps = {
     autoComplete: 'off',
-    className: clsx(styles.input, colorMode === 'dark' && styles.dark),
+    className: clsx(styles.input, colorMode === 'dark' && styles.dark, rest?.className),
     id: formId,
     label: fieldName,
     name: fieldName,
     placeholder: ' ',
-    type: 'text'
+    type: 'text',
+    ...rest
   }
 
   if (fieldName === 'Message') {

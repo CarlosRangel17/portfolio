@@ -71,7 +71,7 @@ const Textarea: FunctionComponent<Props> = forwardRef<HTMLTextAreaElement, Props
 
   return (
     <div className={styles.textareaWrapper}>
-      <div className={styles.formGroup}>
+      <div className={styles.innerWrapper}>
         <textarea
           className={clsx(styles.textarea, errorClass, hasValue && styles.hasValue, className)}
           name={name}

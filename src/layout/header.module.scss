@@ -9,7 +9,7 @@
   height: 45px;
   background-color: #161616;
   align-items: center;
-  border-bottom: 2px solid #ffea00;
+  border-bottom: 2px solid $yellow;
   // padding: 0 30px;
   padding: 0 15px;
   position: fixed;
@@ -17,7 +17,7 @@
 
   &.secondary {
     background-color: $black;
-    border-bottom: 2px solid #00b0ef;
+    border-bottom: 2px solid $lightblue;
   }
 
   .nav {
@@ -63,7 +63,7 @@
         }
 
         li.active > a {
-          color: #feea00;
+          color: $yellow;
         }
 
         &.dark li.active > a {
@@ -132,7 +132,7 @@
     }
 
     li.active > a {
-      color: #feea00;
+      color: $yellow;
     }
 
     &.dark li.active > a {
@@ -211,7 +211,7 @@
     margin-right: 10px;
 
     &:hover {
-      color: #ffea00;
+      color: $yellow;
     }
   }
 }

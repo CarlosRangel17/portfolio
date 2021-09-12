@@ -52,7 +52,7 @@ const Input: FunctionComponent<Props> = forwardRef<HTMLInputElement, Props>(func
 
   return (
     <div className={clsx(styles.inputWrapper, wrapperClass)}>
-      <div className={styles.formGroup}>
+      <div className={styles.innerWrapper}>
         <input
           className={clsx(styles.input, errorClass, hasValue && styles.hasValue, className)}
           name={name}
