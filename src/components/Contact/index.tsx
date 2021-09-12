@@ -14,7 +14,9 @@ const Contact: FunctionComponent<Props> = ({ ...rest }) => {
   return (
     <SectionLayout title="Contact" {...rest}>
       <div className={styles.container}>
-        <p>Want to connect? Feel free to contact me for any work or suggestions below. </p>
+        <p className={styles.description}>
+          Want to connect? Feel free to contact me for any work or suggestions below.{' '}
+        </p>
         <form className={styles.form}>
           <div className={clsx(styles.formGroup, styles.col)}>
             <FormInput fieldName="First Name" />

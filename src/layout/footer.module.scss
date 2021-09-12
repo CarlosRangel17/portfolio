@@ -28,9 +28,19 @@
     color: white;
     list-style-type: none;
     text-transform: uppercase;
+    margin: 16px auto;
+    padding: 0;
 
     .footerLogoLink {
       margin-right: 10px;
+    }
+  }
+
+  .icons {
+    @media screen and (max-width: 498px) {
+      li:last-of-type {
+        padding-top: 10px;
+      }
     }
   }
 
