@@ -82,6 +82,9 @@
           outline: none;
           color: var(--color-text);
 
+          // This is to fix the inner-shadow iOS devices show on inputs
+          -webkit-appearance: none;
+
           &:hover {
             border-color: rgba(255, 182, 0, 0.5);
             &.dark {
