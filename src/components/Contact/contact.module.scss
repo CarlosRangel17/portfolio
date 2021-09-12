@@ -7,6 +7,153 @@
   text-align: center;
   width: 100%;
 
+  .successContainer {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em 2em;
+
+    // Using inset box-shadow instead of border for sizing simplicity
+    // box-shadow: inset 0 0 0 2px var(--color-text);
+    color: var(--color-text);
+    font-size: inherit;
+    font-weight: 700;
+
+    // Required, since we're setting absolute on pseudo-elements
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    margin: 15px auto;
+    padding: 50px 30px;
+    perspective: 100rem;
+    position: relative;
+    // border: 1px solid var(--color-text);
+    height: 400px;
+    // width: 100%;
+
+    &:not(.submitted) {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      padding: 65px 60px 95px;
+      height: 425px;
+      width: 440px;
+    }
+
+    .logoContainer {
+      padding: 15px;
+      border: 5px solid $green;
+      border-radius: 62px;
+      width: 119px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: auto;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 36px;
+      margin-top: 26px;
+    }
+
+    .text {
+      margin-top: 30px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    &.draw {
+      transition: color 0.25s;
+
+      &.keep {
+        color: $green;
+      }
+
+      &::before,
+      &::after {
+        // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+      }
+
+      // This covers the top & right borders (expands right, then down)
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      // And this the bottom & left borders (expands left, then up)
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      // Hover styles
+      &.keep::before,
+      &.keep::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      &.keep::before {
+        border-top-color: $gray-8; // Make borders visible
+        border-right-color: $gray-8;
+        transition: width 0.25s ease-out,
+          // Width expands first
+          height 0.25s ease-out 0.25s; // And then height
+      }
+
+      &.keep::after {
+        border-bottom-color: $gray-8; // Make borders visible
+        border-left-color: $gray-8;
+        transition: border-color 0s ease-out 0.5s,
+          // Wait for ::before to finish before showing border
+          width 0.25s ease-out 0.5s,
+          // And then exanding width
+          height 0.25s ease-out 0.75s; // And finally height
+      }
+    }
+
+    // Inherits from .draw
+    &.meet {
+      // Start ::after in same position as ::before
+      &.keep,
+      &::after {
+        top: 0;
+        left: 0;
+      }
+
+      // Change colors
+      &.keep::before {
+        border-top-color: $green;
+        border-right-color: $green;
+      }
+
+      &.keep::after {
+        border-bottom-color: $green;
+        border-left-color: $green;
+        transition: // Animate height first, then width
+          height 0.25s ease-out, width 0.25s ease-out 0.25s;
+      }
+    }
+  }
+
   .description {
     width: 100%;
     color: var(--color-text);
@@ -52,6 +199,12 @@
     .textareaWrapper {
       width: 100%;
       // max-width: 712px;
+
+      .footer {
+        margin-top: -20px;
+        font-size: 14px;
+        color: red;
+      }
 
       .innerWrapper {
         position: relative;
