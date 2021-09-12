@@ -1,8 +1,11 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
 import useScrollSpy from 'react-use-scrollspy'
 import { ScrollSpyContext } from '.'
+import { useWindowDimensions } from '~contexts/window-dimensions'
 
 export const useActiveScrollSpy = () => {
+  const { isMobile } = useWindowDimensions()
+
   const sectionRefs = [
     useRef<HTMLElement>(null),
     useRef<HTMLElement>(null),
@@ -24,7 +27,7 @@ export const useActiveScrollSpy = () => {
       const { scrollY: windowScrollY } = window
       if (windowScrollY === 0) {
         setActiveSection(0)
-      } else if (windowScrollY > 3246) {
+      } else if ((!isMobile && windowScrollY > 3246) || windowScrollY > 4000) {
         setActiveSection(4)
       } else {
         setActiveSection(initActiveSection)
