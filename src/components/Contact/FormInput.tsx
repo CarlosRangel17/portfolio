@@ -22,7 +22,7 @@ const FormInput: FunctionComponent<Props> = ({ fieldName, ...rest }) => {
     label: fieldName,
     name: fieldName,
     placeholder: ' ',
-    type: 'text',
+    type: fieldName === 'Email Address' ? 'email' : 'text',
     ...rest
   }
 
