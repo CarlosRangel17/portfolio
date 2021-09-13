@@ -5,9 +5,12 @@ const { username, password } = process.env
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { firstName, lastName, email, message } = req.body ?? {}
+  // const { firstName, lastName, email, message } = JSON.parse(req.body)
+
   if (firstName && lastName && email && message && username && password) {
     try {
       let nodemailer = require('nodemailer')
+
       const transporter = nodemailer.createTransport({
         port: 465,
         host: 'smtp.gmail.com',
@@ -16,6 +19,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           pass: password
         },
         secure: true
+      })
+
+      await new Promise((resolve, reject) => {
+        // verify connection configuration
+        transporter.verify(function (error, success) {
+          if (error) {
+            console.log(error)
+            reject(error)
+          } else {
+            console.log('Server is ready to take our messages')
+            resolve(success)
+          }
+        })
       })
 
       const mailData = {
@@ -28,14 +44,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       }
 
       let hasError = false
-      transporter.sendMail(mailData, function (err, info) {
-        if (err) {
-          console.log(err)
-          hasError = true
-        } else {
-          console.log(info)
-        }
+      await new Promise((resolve, reject) => {
+        // send mail
+        transporter.sendMail(mailData, (err, info) => {
+          if (err) {
+            console.error(err)
+            hasError = true
+            reject(err)
+          } else {
+            console.log(info)
+            resolve(info)
+          }
+        })
       })
+
       if (hasError) {
         return res.status(500).json({ message: 'Something went wrong!', error: true })
       }
