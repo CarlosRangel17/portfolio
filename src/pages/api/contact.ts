@@ -26,10 +26,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         html: `<div>${message}</div><p>Sent from:
         ${email}</p>`
       }
+
+      let hasError = false
       transporter.sendMail(mailData, function (err, info) {
-        if (err) console.log(err)
-        else console.log(info)
+        if (err) {
+          console.log(err)
+          hasError = true
+        } else {
+          console.log(info)
+        }
       })
+      if (hasError) {
+        return res.status(500).json({ message: 'Something went wrong!', error: true })
+      }
       return res.status(200).json({ message: 'Email sent successfully!' })
     } catch (error) {
       console.log(error)
