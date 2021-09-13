@@ -1,17 +1,23 @@
 import { MenuItem } from '~interfaces/header'
 
-import { useContext, useMemo } from 'react'
+import { useContext, useMemo, FunctionComponent } from 'react'
 import { ThemeContext } from '~contexts/theme'
 import { ScrollSpyContext } from '~contexts/scroll-spy'
-import { menuItems } from '~consts/header'
+import { menuItems, projectMenuItems } from '~consts/header'
 import clsx from 'clsx'
 import smoothscroll from 'smoothscroll-polyfill'
 
 import styles from './header.module.scss'
+import { Page } from '~interfaces/layout'
 
-export const Navigation = () => {
+interface Props {
+  page?: Page
+}
+
+export const Navigation: FunctionComponent<Props> = ({ page = 'homepage' }) => {
   const { colorMode } = useContext(ThemeContext)
   const { activeSection } = useContext(ScrollSpyContext)
+  const items = page === 'homepage' ? menuItems : projectMenuItems
 
   const scrollTo = (sectionId: string) => {
     // https://github.com/iamdustan/smoothscroll
@@ -37,10 +43,10 @@ export const Navigation = () => {
   return useMemo(
     () => (
       <ul className={clsx(styles.list, colorMode === 'dark' && styles.dark)}>
-        {menuItems.map((item: MenuItem) => (
+        {items.map((item: MenuItem) => (
           <li
             key={item.title}
-            className={activeSection === menuItems.indexOf(item) + 1 ? styles.active : ''}
+            className={activeSection === items.indexOf(item) + 1 ? styles.active : ''}
             onClick={() => handleNavigationClick(item)}
           >
             <a href={item.url}>{item.title}</a>

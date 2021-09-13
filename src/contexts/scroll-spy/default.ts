@@ -27,6 +27,7 @@ export const useActiveScrollSpy = () => {
       const { scrollY: windowScrollY } = window
       if (windowScrollY === 0) {
         setActiveSection(0)
+        // Built for landing page contact form
       } else if ((!isMobile && windowScrollY > 3246) || windowScrollY > 4000) {
         setActiveSection(4)
       } else {

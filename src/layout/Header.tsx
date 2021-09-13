@@ -6,12 +6,13 @@ import clsx from 'clsx'
 
 import styles from './header.module.scss'
 import { Menu } from './Menu'
+import { Page } from '~interfaces/layout'
 
 type Props = {
-  homepage?: string
+  page?: Page
 }
 
-const Header: FunctionComponent<Props> = () => {
+const Header: FunctionComponent<Props> = ({ page = 'homepage' }) => {
   const { colorMode } = useContext(ThemeContext)
 
   return (
@@ -22,7 +23,7 @@ const Header: FunctionComponent<Props> = () => {
         </a>
         <div className={styles.listSection}>
           <DarkToggle />
-          <Menu />
+          <Menu page={page} />
         </div>
       </nav>
     </header>

@@ -3,10 +3,10 @@ import Head from 'next/head'
 
 import Header from './Header'
 import Subheader from './Subheader'
-import { ThemeProvider } from '~contexts/theme/provider'
 import { ScrollSpyProvider } from '~contexts/scroll-spy/provider'
 import WindowDimensionsProvider from '~contexts/window-dimensions'
 import Footer from './Footer'
+import { Page } from '~interfaces/layout'
 
 const defaultTitle = 'Carlos Rangel Portfolio'
 const defaultDescription = 'Welcome to Carlos Rangels portfolio website where you can learn about his career.'
@@ -18,11 +18,11 @@ type Props = {
   ogImage?: string
   title?: string
   url?: string
-  homepage?: string
+  page?: Page
   headerData?: any
 }
 
-const Layout: React.FunctionComponent<Props> = ({ children, title, description, url, homepage, ogImage }) => (
+const Layout: React.FunctionComponent<Props> = ({ children, title, description, url, page = 'homepage', ogImage }) => (
   <>
     <Head>
       <meta charSet="UTF-8" />
@@ -45,16 +45,14 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
       <meta content="1200" property="og:image:width" />
       <meta content="630" property="og:image:height" />
     </Head>
-    <ThemeProvider>
-      <WindowDimensionsProvider>
-        <ScrollSpyProvider>
-          <Header homepage={homepage} />
-          <Subheader />
-          <main>{children}</main>
-          <Footer />
-        </ScrollSpyProvider>
-      </WindowDimensionsProvider>
-    </ThemeProvider>
+    <WindowDimensionsProvider>
+      <ScrollSpyProvider>
+        <Header page={page} />
+        <Subheader page={page} />
+        <main>{children}</main>
+        <Footer />
+      </ScrollSpyProvider>
+    </WindowDimensionsProvider>
   </>
 )
 
