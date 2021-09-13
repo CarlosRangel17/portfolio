@@ -98,7 +98,6 @@ const mfcl: Project = {
 }
 
 export const personalProjects: Projects = {
-  tictactoe,
   marvelSearchEngine,
   organicShop,
   weatherapp,
@@ -110,7 +109,8 @@ const projects: Projects = {
   mattressMatcher,
   mfcl,
   sogetiHackathonAdmin,
-  sogetiHackathon
+  sogetiHackathon,
+  tictactoe
 }
 
 export default projects
