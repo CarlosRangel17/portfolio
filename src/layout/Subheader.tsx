@@ -5,15 +5,17 @@ import getIcon from '~utils/getIcon'
 import { ThemeContext } from '~contexts/theme'
 import clsx from 'clsx'
 import CustomImage from '~components/CustomImage'
+import Link from 'next/link'
 
 import styles from './header.module.scss'
 import { useActiveScrollSpy } from '~contexts/scroll-spy/default'
+import { Page } from '~interfaces/layout'
 
 type Props = {
-  homepage?: string
+  page?: Page
 }
 
-const Subheader: FunctionComponent<Props> = () => {
+const Subheader: FunctionComponent<Props> = ({ page = 'homepage' }) => {
   const { sectionRefs } = useActiveScrollSpy()
   const { colorMode, setColorMode } = useContext(ThemeContext)
   const socialMediaLinks = links.map((link: SocialMediaLink) => (
@@ -33,6 +35,26 @@ const Subheader: FunctionComponent<Props> = () => {
 
   const handleToggle = () => {
     setColorMode(colorMode === 'light' ? 'dark' : 'light')
+  }
+
+  if (page === 'projects') {
+    return (
+      <section
+        id="Projects"
+        className={clsx(styles.subheader, styles.projects, colorMode === 'dark' && styles.secondary)}
+        ref={sectionRefs[0]}
+      >
+        <div className={styles.innerContainer}>
+          <div className={styles.breadcrumbs}>
+            <Link href="/">Home</Link>
+            <Link href="/projects" passHref>
+              <span className={styles.separator}>/ Projects</span>
+            </Link>
+          </div>
+          <h1>Explore all of my recent projects.</h1>
+        </div>
+      </section>
+    )
   }
 
   return (

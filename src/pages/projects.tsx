@@ -3,7 +3,7 @@ import ProjectPage from '~components/Pages/projectPage'
 import Layout from '~layout/Layout'
 
 const Projects: FunctionComponent = () => (
-  <Layout>
+  <Layout page="projects">
     <ProjectPage />
   </Layout>
 )

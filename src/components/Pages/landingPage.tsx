@@ -16,7 +16,7 @@ const LandingPage: FunctionComponent = () => {
   const { sectionRefs } = useContext(ScrollSpyContext)
   return (
     <div className={clsx(styles.container, colorMode === 'dark' ? styles.dark : styles.light)}>
-      <Projects className={styles.section} innerRef={sectionRefs[1]} />
+      <Projects className={styles.section} innerRef={sectionRefs[1]} showAll />
       <About className={styles.section} innerRef={sectionRefs[2]} />
       <Skills className={styles.section} innerRef={sectionRefs[3]} />
       <Accreditation className={styles.section} />

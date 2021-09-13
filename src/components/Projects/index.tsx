@@ -1,10 +1,11 @@
-import { FunctionComponent, useState } from 'react'
+import { FunctionComponent, useContext } from 'react'
 import SectionLayout from '~layout/SectionLayout'
 import projects, { personalProjects } from '~consts/projects'
+import { useRouter } from 'next/router'
 
 import styles from './/projects.module.scss'
 import Card from './Card'
-import Collapse from '~components/Collapse'
+import { ScrollSpyContext } from '~contexts/scroll-spy'
 
 interface Props {
   title?: string
@@ -19,14 +20,14 @@ const Projects: FunctionComponent<Props> = ({
   title = 'Recent Projects',
   ...rest
 }) => {
-  const [seeAll, setSeeAll] = useState(false)
+  const router = useRouter()
+  const { setActiveSection } = useContext(ScrollSpyContext)
 
-  let projectCards = []
+  let projectCards = Object.keys(projects).map((projectKey: string) => (
+    <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
+  ))
   let otherProjectCards = []
   if (showAll) {
-    projectCards = Object.keys(projects).map((projectKey: string) => (
-      <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
-    ))
     otherProjectCards = Object.keys(personalProjects).map((projectKey: string) => (
       <Card key={projectKey} projectKey={projectKey} project={personalProjects[projectKey]} />
     ))
@@ -39,9 +40,10 @@ const Projects: FunctionComponent<Props> = ({
           <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
         ))
   }
-
   const onSeeAll = () => {
-    setSeeAll(!seeAll)
+    setActiveSection(0)
+    window.scrollTo(0, 0)
+    router.push('/projects')
   }
 
   return (
@@ -50,14 +52,11 @@ const Projects: FunctionComponent<Props> = ({
         <div className={styles.body}>
           {projectCards}
           {showAll && (
-            <>
-              <Collapse className={styles.collapse} isOpen={seeAll}>
-                {otherProjectCards}
-              </Collapse>
+            <div className={styles.seeAllContainer}>
               <button className={styles['see-all']} type="button" onClick={onSeeAll}>
-                {seeAll ? 'See Less' : 'See All'}
+                See All Projects
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>

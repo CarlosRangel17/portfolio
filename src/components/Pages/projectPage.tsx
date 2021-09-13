@@ -11,7 +11,7 @@ const ProjectPage: FunctionComponent = () => {
   return (
     <div className={clsx(styles.container, colorMode === 'dark' ? styles.dark : styles.light)}>
       <Projects className={styles.section} />
-      <Projects className={styles.section} showPersonalProjects title="Personal Projects" />
+      <Projects className={styles.section} showPersonalProjects title="Other Projects" />
     </div>
   )
 }

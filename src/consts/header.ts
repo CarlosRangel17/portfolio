@@ -12,6 +12,11 @@ export const menuItems: MenuItem[] = [
   }
 ]
 
+export const projectMenuItems: MenuItem[] = [
+  { title: 'Projects', id: 'Recent Projects' },
+  { title: 'Other Projects', id: 'Other Projects' }
+]
+
 export const links: SocialMediaLink[] = [
   {
     name: 'linkedin',
