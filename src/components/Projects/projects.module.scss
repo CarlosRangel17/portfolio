@@ -20,6 +20,22 @@
   flex-flow: row wrap;
   justify-content: center;
 
+  .collapse {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .see-all {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
   .card {
     display: flex;
     flex-direction: column;
