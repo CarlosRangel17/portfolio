@@ -13,12 +13,18 @@ interface Props {
 const Contact: FunctionComponent<Props> = ({ ...rest }) => {
   const [submitted, setSubmitted] = useState(false)
   const [keep, setKeep] = useState(false)
+  const [errMessage, setErrMessage] = useState(null)
 
-  const setSubmission = () => {
-    setSubmitted(true)
-    setTimeout(() => {
-      setKeep(true)
-    }, 250)
+  const setSubmission = (success: boolean, res?: any) => {
+    if (success) {
+      setSubmitted(true)
+      setTimeout(() => {
+        setKeep(true)
+      }, 250)
+    } else {
+      console.log(res)
+      setErrMessage('Sorry! Something went wrong. Please try again later.')
+    }
   }
 
   return (
@@ -27,7 +33,8 @@ const Contact: FunctionComponent<Props> = ({ ...rest }) => {
         <p className={styles.description}>
           Want to connect? Feel free to contact me for any work or suggestions below.{' '}
         </p>
-        <ContactForm submitted={submitted} setSubmitted={setSubmission} />
+        {errMessage && <div className={styles.errMessage}>{errMessage}</div>}
+        <ContactForm errMessage={errMessage} submitted={submitted} setSubmitted={setSubmission} />
         <div
           className={clsx(
             styles.successContainer,

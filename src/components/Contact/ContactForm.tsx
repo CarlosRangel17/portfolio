@@ -7,11 +7,12 @@ import { initialState } from '~consts/contact'
 import styles from './contact.module.scss'
 
 interface Props {
+  errMessage?: string
   submitted: boolean
-  setSubmitted: () => void
+  setSubmitted: (success: boolean, res?: any) => void
 }
 
-const ContactForm: FunctionComponent<Props> = ({ submitted, setSubmitted }) => {
+const ContactForm: FunctionComponent<Props> = ({ errMessage, submitted, setSubmitted }) => {
   const [firstName, setFirstName] = useState(initialState.first)
   const [lastName, setLastName] = useState(initialState.last)
   const [email, setEmail] = useState(initialState.email)
@@ -55,11 +56,11 @@ const ContactForm: FunctionComponent<Props> = ({ submitted, setSubmitted }) => {
         console.log('Response received')
         if (res.status === 200) {
           console.log('Response succeeded!')
-          // setSubmitted(true)
-          setSubmitted()
+          setSubmitted(true)
           handleClearState()
         } else {
           // Something went wrong!
+          setSubmitted(false, res)
         }
       })
     }
@@ -102,7 +103,7 @@ const ContactForm: FunctionComponent<Props> = ({ submitted, setSubmitted }) => {
         <Button type="button" buttonType="tertiary" onClick={handleClearState}>
           Clear Form
         </Button>
-        <Button type="submit" buttonType="success">
+        <Button type="submit" buttonType="success" disabled={errMessage?.length > 0}>
           Submit
         </Button>
       </div>
