@@ -23,23 +23,13 @@ const Projects: FunctionComponent<Props> = ({
   const router = useRouter()
   const { setActiveSection } = useContext(ScrollSpyContext)
 
-  let projectCards = Object.keys(projects).map((projectKey: string) => (
-    <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
-  ))
-  let otherProjectCards = []
-  if (showAll) {
-    otherProjectCards = Object.keys(personalProjects).map((projectKey: string) => (
-      <Card key={projectKey} projectKey={projectKey} project={personalProjects[projectKey]} />
-    ))
-  } else {
-    projectCards = showPersonalProjects
-      ? Object.keys(personalProjects).map((projectKey: string) => (
-          <Card key={projectKey} projectKey={projectKey} project={personalProjects[projectKey]} />
-        ))
-      : Object.keys(projects).map((projectKey: string) => (
-          <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
-        ))
-  }
+  const projectCards = showPersonalProjects
+    ? Object.keys(personalProjects).map((projectKey: string) => (
+        <Card key={projectKey} projectKey={projectKey} project={personalProjects[projectKey]} />
+      ))
+    : Object.keys(projects).map((projectKey: string) => (
+        <Card key={projectKey} projectKey={projectKey} project={projects[projectKey]} />
+      ))
   const onSeeAll = () => {
     setActiveSection(0)
     window.scrollTo(0, 0)
