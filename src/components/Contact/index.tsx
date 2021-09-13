@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useRef } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import SectionLayout from '~layout/SectionLayout'
 import ContactForm from './ContactForm'
 
