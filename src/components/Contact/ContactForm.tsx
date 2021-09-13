@@ -43,7 +43,6 @@ const ContactForm: FunctionComponent<Props> = ({ submitted, setSubmitted }) => {
         email,
         message
       }
-      setSubmitted()
 
       await fetch('/api/contact', {
         method: 'POST',
