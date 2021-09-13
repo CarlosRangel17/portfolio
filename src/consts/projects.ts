@@ -88,15 +88,6 @@ const deliveryTracker: Project = {
   siteUrl: 'https://www.mattressfirm.com/track'
 }
 
-const priceMatcher: Project = {
-  title: 'Price Matcher',
-  description:
-    'An internal app that provides daily competitive pricing for in-store Sleep Experts to beat competitor prices and land PoS with customers.',
-  technologies: ['React', 'NextJS', 'SASS', 'CSS3'],
-  // githubUrl: ''
-  siteUrl: 'https://pricematcher.mattressfirm.com/'
-}
-
 const mfcl: Project = {
   title: 'MF Component Library',
   description:
@@ -106,7 +97,6 @@ const mfcl: Project = {
   siteUrl: 'https://mf-cl.vercel.app/'
 }
 
-// const projects: Project[] = [portfolio, ticTacToe, weatherapp, marvelSearchEngine, organicShop, cometx]
 export const personalProjects: Projects = {
   tictactoe,
   marvelSearchEngine,
@@ -118,7 +108,6 @@ export const personalProjects: Projects = {
 const projects: Projects = {
   deliveryTracker,
   mattressMatcher,
-  priceMatcher,
   mfcl,
   sogetiHackathonAdmin,
   sogetiHackathon
