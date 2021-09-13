@@ -1,4 +1,16 @@
-import { SocialMediaLink } from '~interfaces/header'
+import { SocialMediaLink, MenuItem } from '~interfaces/header'
+
+export const menuItems: MenuItem[] = [
+  // { title: 'Home' },
+  { title: 'Projects', id: 'Recent Projects' },
+  { title: 'About', id: 'About Me' },
+  { title: 'Skills' },
+  { title: 'Contact' },
+  {
+    title: 'Resume',
+    url: 'https://github.com/CarlosRangel17/portfolio/raw/develop/public/Carlos%20Rangel%202021%20Resume.pdf'
+  }
+]
 
 export const links: SocialMediaLink[] = [
   {

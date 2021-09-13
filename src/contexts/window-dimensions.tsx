@@ -6,12 +6,14 @@ const WindowDimensionsCtx = createContext({
   innerHeight: 0,
   outerWidth: 0,
   outerHeight: 0,
-  isMobile: false
+  isMobile: false,
+  isTablet: false
 })
 
 const WindowDimensionsProvider: FunctionComponent = ({ children }) => {
   const [dimensions, setDimensions] = useState({
     isMobile: false,
+    isTablet: false,
     innerWidth: typeof window !== 'undefined' ? window.innerWidth : 0,
     innerHeight: typeof window !== 'undefined' ? window.innerHeight : 0,
     outerWidth: typeof window !== 'undefined' ? window.outerWidth : 0,
@@ -23,6 +25,7 @@ const WindowDimensionsProvider: FunctionComponent = ({ children }) => {
       // Set dimensions to state
       setDimensions({
         isMobile: window.innerWidth < 600,
+        isTablet: window.innerWidth > 600 && window.innerWidth < 992,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
         outerWidth: window.outerWidth,
@@ -43,6 +46,7 @@ const WindowDimensionsProvider: FunctionComponent = ({ children }) => {
   useEffect(() => {
     setDimensions({
       isMobile: window.innerWidth < 600,
+      isTablet: window.innerWidth > 600 && window.innerWidth < 992,
       innerWidth: window.innerWidth,
       innerHeight: window.innerHeight,
       outerWidth: window.outerWidth,

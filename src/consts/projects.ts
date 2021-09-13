@@ -11,8 +11,7 @@ import Project, { Projects } from '~interfaces/project'
 
 const tictactoe: Project = {
   title: 'Tic Tac Toe',
-  description:
-    'A Weather app using the Open Weather Map API to make calls to a restful api to return the current weather data.',
+  description: 'Play a classic 3x3 game of Tic Tac Toe with your friends! Built using React Hooks and SASS.',
   technologies: ['React', 'JavaScript', 'HTML5', 'CSS3'],
   githubUrl: 'https://github.com/CarlosRangel17/tictactoe',
   siteUrl: 'https://carlosrangel17.github.io/tictactoe/'
@@ -29,7 +28,8 @@ const weatherapp: Project = {
 
 const marvelSearchEngine: Project = {
   title: 'Marvel Search Engine',
-  description: 'A search engine for all things Marvel. (i.e Comics, Characters, Events, Series, etc.)',
+  description:
+    'A search engine using the official Marvel Developer API. Search for all things Marvel (i.e Comics, Characters, Events, Series, etc.)',
   technologies: ['Angular 7', 'Javascript', 'HTML5', 'CSS3'],
   githubUrl: 'https://github.com/CarlosRangel17/angular-marvel-engine',
   siteUrl: 'https://angular-marvel-engine.firebaseapp.com/'
@@ -55,9 +55,9 @@ const cometx: Project = {
 // const projects: Project[] = [portfolio, ticTacToe, weatherapp, marvelSearchEngine, organicShop, cometx]
 const projects: Projects = {
   tictactoe,
-  weatherapp,
   marvelSearchEngine,
   organicShop,
+  weatherapp,
   cometx
 }
 

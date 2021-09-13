@@ -4,7 +4,9 @@ import Head from 'next/head'
 import Header from './Header'
 import Subheader from './Subheader'
 import { ThemeProvider } from '~contexts/theme/provider'
+import { ScrollSpyProvider } from '~contexts/scroll-spy/provider'
 import WindowDimensionsProvider from '~contexts/window-dimensions'
+import Footer from './Footer'
 
 const defaultTitle = 'Carlos Rangel Portfolio'
 const defaultDescription = 'Welcome to Carlos Rangels portfolio website where you can learn about his career.'
@@ -45,9 +47,12 @@ const Layout: React.FunctionComponent<Props> = ({ children, title, description, 
     </Head>
     <ThemeProvider>
       <WindowDimensionsProvider>
-        <Header homepage={homepage} />
-        <Subheader />
-        <main>{children}</main>
+        <ScrollSpyProvider>
+          <Header homepage={homepage} />
+          <Subheader />
+          <main>{children}</main>
+          <Footer />
+        </ScrollSpyProvider>
       </WindowDimensionsProvider>
     </ThemeProvider>
   </>
