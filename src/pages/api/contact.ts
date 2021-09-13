@@ -5,7 +5,7 @@ const { username, password } = process.env
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { firstName, lastName, email, message } = req.body ?? {}
-  if (firstName && lastName && email && message) {
+  if (firstName && lastName && email && message && username && password) {
     try {
       let nodemailer = require('nodemailer')
       const transporter = nodemailer.createTransport({
