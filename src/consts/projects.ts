@@ -108,8 +108,8 @@ const projects: Projects = {
   deliveryTracker,
   mattressMatcher,
   mfcl,
-  sogetiHackathonAdmin,
   sogetiHackathon,
+  sogetiHackathonAdmin,
   tictactoe
 }
 
