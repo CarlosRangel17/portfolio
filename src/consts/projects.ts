@@ -30,7 +30,7 @@ const walkit: Project = {
   description:
     'A healthcare fitness app that incentives patients to maintain daily fitness goals to earn and redeem blockchain tokens at participating vendors.',
   technologies: ['Blockchain', 'C#', 'Ethereum', 'AngularJS'],
-  githubUrl: 'https://www.youtube.com/watch?v=h_xXlQs0J6I'
+  siteUrl: 'https://www.youtube.com/watch?v=h_xXlQs0J6I'
   // siteUrl: ''
 }
 
