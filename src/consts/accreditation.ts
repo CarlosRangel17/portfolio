@@ -21,6 +21,12 @@ export const accreditations: Accreditations = {
   ],
   licenses: [
     {
+      name: 'Enterprise Design Thinking Practictioner',
+      issuer: 'IBM',
+      issueDate: 'Oct 2020',
+      url: 'https://www.credly.com/badges/178b359f-db94-4ac1-b290-d2c0bac719f4?source=linked_in_profile'
+    },
+    {
       name: 'Microsoft 70-480: Programming in HTML5 with JS & CSS3',
       issuer: 'Microsoft',
       issueDate: 'April 2019',
@@ -31,15 +37,15 @@ export const accreditations: Accreditations = {
       issuer: 'edX',
       issueDate: 'Sep 2018 - Expired Sep 2019',
       url: 'https://courses.edx.org/certificates/2f27e67f69d443bea7aa48ea101dc3dc'
-    },
+    }
+  ],
+  otherLicenses: [
     {
       name: 'IBM Blockchain Foundation Developer',
       issuer: 'IBM',
       issueDate: 'Jan 2018',
       url: 'https://www.credly.com/badges/222dcc2e-f1f5-4258-b56e-e73fef7081c7/linked_in_profile'
-    }
-  ],
-  otherLicenses: [
+    },
     {
       name: 'IBM Blockchain Essentials',
       issuer: 'IBM',
