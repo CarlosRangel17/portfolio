@@ -17,6 +17,23 @@ const tictactoe: Project = {
   siteUrl: 'https://carlosrangel17.github.io/tictactoe/'
 }
 
+const fabricchain: Project = {
+  title: 'Fabric Consultant Chain',
+  description: 'Permissioned blockchain network to manage consultant and client assets.',
+  technologies: ['Hyperledger Fabric', 'Blockchain', 'Golang', 'Chaincode', 'Docker', 'AngularJS', 'Node.js'],
+  githubUrl: 'https://github.com/CarlosRangel17/fabric-consultantchain'
+  // siteUrl: ''
+}
+
+const walkit: Project = {
+  title: 'WalkIT',
+  description:
+    'A healthcare fitness app that incentives patients to maintain daily fitness goals to earn and redeem blockchain tokens at participating vendors.',
+  technologies: ['Blockchain', 'C#', 'Ethereum', 'AngularJS'],
+  githubUrl: 'https://www.youtube.com/watch?v=h_xXlQs0J6I'
+  // siteUrl: ''
+}
+
 const weatherapp: Project = {
   title: 'Weather App',
   description:
@@ -24,6 +41,14 @@ const weatherapp: Project = {
   technologies: ['React', 'JavaScript', 'HTML5', 'CSS3'],
   githubUrl: 'https://github.com/CarlosRangel17/weather-react-app',
   siteUrl: 'https://weather-react-engine.web.app/'
+}
+
+const wetherapp: Project = {
+  title: 'Wether App',
+  description: 'A wETH to ETH Conversion App that interfaces directly with a smart contract.',
+  technologies: ['Blockchain', 'Solidity', 'Ethereum', 'Javascript', 'ReactJS'],
+  githubUrl: 'https://github.com/CarlosRangel17/wetherapp'
+  // siteUrl: ''
 }
 
 const marvelSearchEngine: Project = {
@@ -99,7 +124,10 @@ const mfcl: Project = {
 
 export const personalProjects: Projects = {
   marvelSearchEngine,
+  walkit,
+  fabricchain,
   organicShop,
+  wetherapp,
   weatherapp,
   cometx
 }

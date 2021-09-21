@@ -57,11 +57,12 @@
     }
 
     .imageContainer {
+      display: flex;
+      justify-content: center;
       cursor: pointer;
       max-height: 185px;
       border-radius: 15px;
       position: relative;
-
       .overlay {
         background: rgba(0, 0, 0, 0.33);
         height: 100%;
