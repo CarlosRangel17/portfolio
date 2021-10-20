@@ -4,6 +4,7 @@ const images: CustomImage = {
   about: { src: './carlos-max.jpeg', width: '345px', height: '530.66px' },
   cometx: { src: './cometx.png', width: '316px', height: '185px' },
   deliveryTracker: { src: './delivery-tracker.png', width: '315px', height: '185px' },
+  donationBox: { src: './donation-box.png', width: '315px', height: '185px' },
   fabricchain: { src: './fabricchain.png', width: '316px', height: '185px' },
   portfolio: { src: './tech-wizard.png', darkSrc: './tech-wizard-blue.png', width: '100px', height: '100px' },
   portfolio_dark: { src: './tech-wizard-blue.png', width: '100px', height: '100px' },

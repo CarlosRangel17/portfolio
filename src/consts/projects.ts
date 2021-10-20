@@ -9,6 +9,14 @@ import Project, { Projects } from '~interfaces/project'
 //   siteUrl: 'https://crangel-portfolio.vercel.app/'
 // }
 
+const donationBox: Project = {
+  title: 'Donation Box',
+  description: 'A mobile-first UI that enables a visitor to donate funds to a smart contract (Görli network).',
+  technologies: ['Blockchain', 'Solidity', 'Ethereum', 'Hardhat', 'Javascript', 'ReactJS', 'NextJS'],
+  githubUrl: 'https://github.com/CarlosRangel17/donation-box',
+  siteUrl: 'https://donation-box.vercel.app'
+}
+
 const tictactoe: Project = {
   title: 'Tic Tac Toe',
   description: 'Play a classic 3x3 game of Tic Tac Toe with your friends! Built using React Hooks and SASS.',
@@ -129,16 +137,17 @@ export const personalProjects: Projects = {
   organicShop,
   wetherapp,
   weatherapp,
+  sogetiHackathonAdmin,
   cometx
 }
 
 const projects: Projects = {
+  donationBox,
   deliveryTracker,
   mattressMatcher,
   mfcl,
-  sogetiHackathon,
-  sogetiHackathonAdmin,
-  tictactoe
+  tictactoe,
+  sogetiHackathon
 }
 
 export default projects
