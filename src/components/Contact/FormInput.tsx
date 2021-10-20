@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext } from 'react'
+import { FunctionComponent, useContext, useRef } from 'react'
 import { ThemeContext } from '~contexts/theme'
 import clsx from 'clsx'
 
@@ -13,7 +13,7 @@ interface Props {
 
 const FormInput: FunctionComponent<Props> = ({ fieldName, ...rest }) => {
   const { colorMode } = useContext(ThemeContext)
-
+  const ref = useRef(null)
   const formId = fieldName?.toLowerCase().replace(' ', '')
   const inputProps = {
     autoComplete: 'off',
@@ -30,7 +30,7 @@ const FormInput: FunctionComponent<Props> = ({ fieldName, ...rest }) => {
     return <Textarea {...inputProps} rows={5} />
   }
 
-  return <Input {...inputProps} />
+  return <Input ref={ref} {...inputProps} />
 }
 
 export default FormInput

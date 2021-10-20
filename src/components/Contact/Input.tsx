@@ -17,7 +17,7 @@ export interface Props {
   [rest: string]: unknown
 }
 
-const Input: FunctionComponent<Props> = forwardRef<HTMLInputElement, Props>(function TextField(props, ref) {
+const Input: FunctionComponent<Props> = forwardRef<HTMLInputElement, Props>((props, ref) => {
   const {
     wrapperClass,
     className,
