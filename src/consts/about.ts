@@ -1,7 +1,7 @@
-export const intro = 'Hi, my name is Carlos Rangel, Software Engineer based in Dallas, TX.'
+export const intro = 'Hi, my name is Carlos Rangel, Software Engineer based in Texas.'
 
 export const description =
-  'I have a passion for software engineering and technical leadership acquired through 6+ years of professional software consultation. In my free time, I enjoy participating in hackathons and performing as a professional mariachi musician.'
+  'I have a passion for software engineering and technical leadership acquired through 7+ years of professional software consultation. In my free time, I enjoy participating in hackathons and performing as a professional mariachi musician.'
 
 // I set forth and enforce high expecations of quality in all that I do with the end goal of exceeding the expectations of those around me.'
 

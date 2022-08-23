@@ -12,7 +12,7 @@ import Project, { Projects } from '~interfaces/project'
 const donationBox: Project = {
   title: 'Donation Box',
   description: 'A mobile-first UI that enables a visitor to donate funds to a smart contract (Görli network).',
-  technologies: ['Blockchain', 'Solidity', 'Ethereum', 'Hardhat', 'Javascript', 'ReactJS', 'NextJS'],
+  technologies: ['Web3', 'Blockchain', 'Solidity', 'Ethereum', 'Hardhat', 'Javascript', 'ReactJS', 'NextJS'],
   githubUrl: 'https://github.com/CarlosRangel17/donation-box',
   siteUrl: 'https://donation-box.vercel.app'
 }
