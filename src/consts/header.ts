@@ -8,7 +8,7 @@ export const menuItems: MenuItem[] = [
   { title: 'Contact' },
   {
     title: 'Resume',
-    url: 'https://github.com/CarlosRangel17/portfolio/raw/develop/public/Carlos%20Rangel%202021%20Resume.pdf'
+    url: 'https://github.com/CarlosRangel17/portfolio/raw/master/public/Carlos%20Rangel%202022%20Resume.pdf'
   }
 ]
 
