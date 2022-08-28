@@ -20,7 +20,7 @@ export const projectMenuItems: MenuItem[] = [
 export const links: SocialMediaLink[] = [
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/in/rangel-r-carlos/'
+    url: 'https://www.linkedin.com/in/carlos-r-rangel/'
   },
   {
     name: 'github',
