@@ -1,1 +1,1 @@
-export type Page = 'homepage' | 'projects'
+export type Page = 'homepage' | 'projects' | 'share'
