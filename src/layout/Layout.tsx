@@ -7,6 +7,7 @@ import { ScrollSpyProvider } from '~contexts/scroll-spy/provider'
 import WindowDimensionsProvider from '~contexts/window-dimensions'
 import Footer from './Footer'
 import { Page } from '~interfaces/layout'
+import { ReactNode } from 'react'
 
 const defaultTitle = 'Carlos Rangel Portfolio'
 const defaultDescription = 'Welcome to Carlos Rangels portfolio website where you can learn about his career.'
@@ -20,6 +21,7 @@ type Props = {
   url?: string
   page?: Page
   headerData?: any
+  children: ReactNode
 }
 
 const Layout: React.FunctionComponent<Props> = ({ children, title, description, url, page = 'homepage', ogImage }) => (

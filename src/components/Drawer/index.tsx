@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useRef, useState, useEffect, useContext } from 'react'
+import React, { FunctionComponent, useRef, useState, useEffect, useContext, ReactNode } from 'react'
 
 import styles from './drawer.module.scss'
 import Portal from '~components/Portal'
@@ -25,6 +25,7 @@ interface Props {
   id?: string
   isOpen?: boolean
   onClose?: Function | null
+  children: ReactNode
   [rest: string]: unknown // ...rest property
 }
 

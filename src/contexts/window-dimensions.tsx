@@ -1,4 +1,4 @@
-import React, { FunctionComponent, createContext, useEffect, useState } from 'react'
+import React, { FunctionComponent, createContext, useEffect, useState, ReactNode } from 'react'
 import { contextHookFactory } from './contextHelpers'
 
 const WindowDimensionsCtx = createContext({
@@ -10,7 +10,11 @@ const WindowDimensionsCtx = createContext({
   isTablet: false
 })
 
-const WindowDimensionsProvider: FunctionComponent = ({ children }) => {
+interface Props {
+  children: ReactNode
+}
+
+const WindowDimensionsProvider: FunctionComponent<Props> = ({ children }) => {
   const [dimensions, setDimensions] = useState({
     isMobile: false,
     isTablet: false,

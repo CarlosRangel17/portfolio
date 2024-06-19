@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MutableRefObject } from 'react'
+import React, { FunctionComponent, MutableRefObject, ReactNode } from 'react'
 import styles from './sectionLayout.module.scss'
 import clsx from 'clsx'
 
@@ -7,6 +7,7 @@ type Props = {
   [rest: string]: unknown
   secondary?: boolean
   innerRef?: MutableRefObject<HTMLElement>
+  children: ReactNode
 }
 
 const SectionLayout: FunctionComponent<Props> = ({ title, secondary, innerRef, children, ...rest }) => (

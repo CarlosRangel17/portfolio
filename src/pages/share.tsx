@@ -4,7 +4,7 @@ import Layout from '~layout/Layout'
 
 const Share: FunctionComponent = () => {
   const [canShare, setCanShare] = useState(false)
-  const [shareData, setShareData] = useState({
+  const [shareData, _setShareData] = useState({
     title: 'Check this out!',
     text: 'Sharing from our POC page using Web Share API.',
     url: typeof window !== 'undefined' ? window?.location?.href : ''
