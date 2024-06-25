@@ -22,7 +22,7 @@ const ApolloPage = () => {
 
   return (
     <div id="product-tiles" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '20px' }}>
-      {products.map((product, i) => (
+      {products.map((product) => (
         <div
           key={product.url}
           style={{
